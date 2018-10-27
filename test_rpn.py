@@ -17,6 +17,10 @@ class TestBasics(unittest.TestCase):
         result = rpn.calculate('6 3 /')
         self.assertEqual(2, result)
 
+    def test_exponent(self):
+        result = rpn.calculate('2 3 ^')
+        self.assertEqual(8, result)
+
     def test_toomany(self):
     	with self.assertRaises(ValueError):
     		result = rpn.calculate('1 2 3 +')
